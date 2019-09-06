@@ -2,7 +2,7 @@
 
 This a Qualification Repository
 
-Idea: IntellijIdea
+Idea: Intellij
 Language: Kotlin
 
 It was done the following exercises:
