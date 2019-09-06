@@ -1,0 +1,4 @@
+The command in this code file it's for:
+1. Create a txt file;
+2. Write text on this txt;
+3. Read what was written

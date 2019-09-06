@@ -7,7 +7,7 @@ import java.io.FileOutputStream
 5. Simple To Do List
  */
 
-fun main() {
+fun main(args: Array<String>) {
 
     try {
         val file = FileOutputStream("file.txt")
@@ -16,7 +16,14 @@ fun main() {
 
         stream.close()
 
-        File("file.txt").writeText("I'm writing in a new file!!\nThis is the file number 1")
+        File("file.txt").writeText(
+            "The command in this code file it's for:\n" +
+                    "1. Create a txt file;\n" +
+                    "2. Write text on this txt;\n" +
+                    "3. Read what was written"
+        )
+
+        stream.close()
         File("file.txt").forEachLine { println(it) }
 
     } catch (e: Exception) {
