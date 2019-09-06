@@ -1,22 +1,25 @@
 package exercises
 
-import java.nio.file.Files
-import java.nio.file.Paths
+import java.io.File
+import java.io.FileOutputStream
 
 /*
 5. Simple To Do List
  */
 
 fun main() {
-    val address = Paths.get("C:/Users/Camila Grandini/Desktop/teste.txt")
 
     try {
-        val text = Files.readAllBytes(address)
-        val read = String(text)
+        val file = FileOutputStream("file.txt")
 
-        println(read)
+        val stream = File("file.txt").inputStream()
+
+        stream.close()
+
+        File("file.txt").writeText("I'm writing in a new file!!\nThis is the file number 1")
+        File("file.txt").forEachLine { println(it) }
 
     } catch (e: Exception) {
+        print("Error while writing the file")
     }
-
 }

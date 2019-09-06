@@ -12,29 +12,18 @@ fun isCNPJ(document: String): Boolean {
         numbers.add(it.toString().toInt())
     }
 
-    if (numbers.size != 16) return false
-
-    //repeticao
-    (0..9).forEach { n ->
-        val digits = arrayListOf<Int>()
-        (0..14).forEach { digits.add(n) }
-        if (numbers == digits) return false
-    }
-
-    //digito 1
-    val dv1  =  11 - (arrayOf(5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2).mapIndexed { index, i ->
+    //verifying digit 1
+    val vd1  =  11 - (arrayOf(5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2).mapIndexed { index, i ->
         i * numbers[index]
     }).sum().rem(11)
-    numbers.add(dv1)
+    numbers.add(vd1)
 
-    //digito 2
-    val dv2  =  11 - (arrayOf(6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2).mapIndexed { index, i ->
+    //verifying digit 2
+    val vd2  =  11 - (arrayOf(6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2).mapIndexed { index, i ->
         i * numbers[index]
     }).sum().rem(11)
 
-
-
-    return numbers[12] == dv1 && numbers[13] == dv2
+    return numbers[12] == vd1 && numbers[13] == vd2
 }
 
 fun main() {
