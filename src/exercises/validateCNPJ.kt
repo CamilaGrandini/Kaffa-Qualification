@@ -26,7 +26,7 @@ fun isCNPJ(document: String): Boolean {
     return numbers[12] == vd1 && numbers[13] == vd2
 }
 
-fun main() {
+fun main(args: Array<String>) {
     val expected = "([0-9]{2})([0-9]{3})([0-9]{3})([0-9]{4}([0-9]{2}))".toRegex()
 
     //format = XX.XXX.XXX/YYYY-ZZ
